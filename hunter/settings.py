@@ -60,10 +60,7 @@ WSGI_APPLICATION = 'hunter.wsgi.application'
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'hunter',
-    }
+    'default': dj_database_url.config()
 }
 
 # Internationalization
