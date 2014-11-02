@@ -5,6 +5,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import RequestContext, loader
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
+from blockchain import createwallet
 
 
 def login_user(request):
@@ -37,6 +38,8 @@ def register(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             new_user = form.save()
+            wallet = createwallet.create_wallet('Einstein5050!', 'ecb27eb7-2c57-4b06-a596-4ea6c1455277', label = 'Test Wallet')
+            print wallet
             return HttpResponseRedirect("success")
     else:
         form = UserCreationForm()
