@@ -22,5 +22,3 @@ urlpatterns += patterns('',
         'document_root': settings.STATIC_ROOT
         }),
 )
-
-(r"^item_action/(done|delete|onhold)/(\d*)/$", "item_action"),
