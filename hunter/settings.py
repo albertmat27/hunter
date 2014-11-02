@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'SignIn'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -59,7 +60,10 @@ WSGI_APPLICATION = 'hunter.wsgi.application'
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config()
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'hunter',
+    }
 }
 
 # Internationalization
